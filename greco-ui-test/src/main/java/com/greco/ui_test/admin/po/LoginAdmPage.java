@@ -56,7 +56,7 @@ public class LoginAdmPage{
         return this;    
     }
     
-    public SelectcomPage submitLogin() {
+    public SelectcomPage submitLoginOk() {
         // This is the only place that submits the login form and expects the destination to be the home page.
         // A seperate method should be created for the instance of clicking login whilst expecting a login failure. 
         driver.findElement(loginButtonLocator).click();
@@ -73,11 +73,27 @@ public class LoginAdmPage{
      * @param pwd Contraseña
      * @return Página de selección de contraseña
      */
-    public SelectcomPage submitLogin(String username, String pwd){
+    public SelectcomPage submitLoginOk(String username, String pwd){
     	typeUsername(username);
     	typePassword(pwd);
-    	return submitLogin();
+    	return submitLoginOk();
     }
+    
+    /**
+     * Login con éxito.
+     * @param username Usuario.
+     * @param pwd Contraseña
+     * @return Página de selección de contraseña
+     */
+    public LoginAdmPage submitLoginKo(String username, String pwd){
+    	typeUsername(username);
+    	typePassword(pwd);
+    	driver.findElement(loginButtonLocator).click();
+    	
+    	return new LoginAdmPage(driver);
+    }
+    
+    
     /**
      * Crear nueva cuenta.
      * @return Página de nueva cuenta.

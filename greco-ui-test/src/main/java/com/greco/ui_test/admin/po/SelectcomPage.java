@@ -22,4 +22,17 @@ public class SelectcomPage {
         
         
     }
+	/**
+	 * Indica si el usuario que accedió a esta página tiene una o más comunidades disponibles.
+	 * @return Si (true), no (false)
+	 */
+	public boolean communitiesAvailables(){
+		boolean ret=true;
+		try {
+        	driver.findElement(By.id("selectCommunityForm:noCommunityLabel"));
+        } catch (NoSuchElementException e){
+        	ret=false;	
+        }
+		return ret;
+	}
 }

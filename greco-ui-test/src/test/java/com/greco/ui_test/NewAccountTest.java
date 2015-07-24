@@ -7,7 +7,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.greco.ui_test.admin.po.LoginAdmPage;
 import com.greco.ui_test.admin.po.NewaccountPage;
@@ -25,8 +24,8 @@ public class NewAccountTest {
 	 */
 	@Before
 	public void setUp() {
-		driver = new FirefoxDriver();
-		driver.get("http://localhost:8080/greco-console/");
+		driver = TestConfiguration.getDriver();
+		driver.get(TestConfiguration.ADMIN_URL);
 		LoginAdmPage loginAdmPage=new LoginAdmPage(driver);
 		newAccountPage=loginAdmPage.newAccount();
 	}
@@ -53,10 +52,10 @@ public class NewAccountTest {
 		
 		
 		newAccountPage.typeEmail("")
-			.typeNickname("user01")
-			.typeMyData("Prueba user01.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+			.typeNickname(TestConfiguration.USER01_NICKNAME)
+			.typeMyData(TestConfiguration.USER01_MYDATA)
+			.typePassword(TestConfiguration.USER01_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER01_PWD);
 		
 		newAccountPage=newAccountPage.nextKO();
 	}
@@ -75,10 +74,10 @@ public class NewAccountTest {
 	public void test02(){
 		
 		newAccountPage.typeEmail("user01 greco.es")
-			.typeNickname("user01")
-			.typeMyData("Prueba user01.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+			.typeNickname(TestConfiguration.USER01_NICKNAME)
+			.typeMyData(TestConfiguration.USER01_MYDATA)
+			.typePassword(TestConfiguration.USER01_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER01_PWD);
 		
 		newAccountPage.nextKO();
 	}
@@ -96,11 +95,11 @@ public class NewAccountTest {
 	@Test
 	public void test03(){
 		
-		newAccountPage.typeEmail("user01@greco.es")
+		newAccountPage.typeEmail(TestConfiguration.USER01_EMAIL)
 			.typeNickname("    ")
-			.typeMyData("Prueba user01.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+			.typeMyData(TestConfiguration.USER01_MYDATA)
+			.typePassword(TestConfiguration.USER01_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER01_PWD);
 		
 		newAccountPage.nextKO();
 	}
@@ -118,11 +117,11 @@ public class NewAccountTest {
 	@Test
 	public void test04(){
 		
-		newAccountPage.typeEmail("ser01@greco.es")
+		newAccountPage.typeEmail(TestConfiguration.USER01_EMAIL)
 			.typeNickname("")
-			.typeMyData("Prueba user01.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+			.typeMyData(TestConfiguration.USER01_MYDATA)
+			.typePassword(TestConfiguration.USER01_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER01_PWD);
 		
 		newAccountPage.nextKO();
 	}
@@ -140,11 +139,11 @@ public class NewAccountTest {
 	@Test
 	public void test05(){
 		
-		newAccountPage.typeEmail("user01@greco.es")
-			.typeNickname("user01")
-			.typeMyData("Prueba user01.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+		newAccountPage.typeEmail(TestConfiguration.USER01_EMAIL)
+			.typeNickname(TestConfiguration.USER01_NICKNAME)
+			.typeMyData(TestConfiguration.USER01_MYDATA)
+			.typePassword(TestConfiguration.USER01_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER01_PWD);
 		
 		newAccountPage.nextOK();
 	}
@@ -162,11 +161,11 @@ public class NewAccountTest {
 	@Test
 	public void test06(){
 		
-		newAccountPage.typeEmail("user01@greco.es")
-			.typeNickname("user02")
-			.typeMyData("Prueba user02.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+		newAccountPage.typeEmail(TestConfiguration.USER01_EMAIL)
+			.typeNickname(TestConfiguration.USER02_NICKNAME)
+			.typeMyData(TestConfiguration.USER02_MYDATA)
+			.typePassword(TestConfiguration.USER02_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER02_PWD);
 		
 		newAccountPage.nextKO();
 	}
@@ -184,11 +183,11 @@ public class NewAccountTest {
 	@Test
 	public void test07(){
 		
-		newAccountPage.typeEmail("user02@greco.es")
-			.typeNickname("user01")
-			.typeMyData("Prueba user02.")
-			.typePassword("user")
-			.typePasswordConfirmation("user");
+		newAccountPage.typeEmail(TestConfiguration.USER02_EMAIL)
+			.typeNickname(TestConfiguration.USER01_NICKNAME)
+			.typeMyData(TestConfiguration.USER02_MYDATA)
+			.typePassword(TestConfiguration.USER02_PWD)
+			.typePasswordConfirmation(TestConfiguration.USER02_PWD);
 		
 		newAccountPage.nextKO();
 	}
@@ -206,11 +205,11 @@ public class NewAccountTest {
 	@Test
 	public void test08(){
 		
-		newAccountPage.typeEmail("user02@greco.es")
-			.typeNickname("user02")
-			.typeMyData("Prueba user02.")
-			.typePassword("user")
-			.typePasswordConfirmation("user2");
+		newAccountPage.typeEmail(TestConfiguration.USER02_EMAIL)
+			.typeNickname(TestConfiguration.USER02_NICKNAME)
+			.typeMyData(TestConfiguration.USER02_MYDATA)
+			.typePassword(TestConfiguration.USER02_PWD)
+			.typePasswordConfirmation("una_inventada");
 		
 		newAccountPage.nextKO();
 	}
@@ -228,9 +227,9 @@ public class NewAccountTest {
 	@Test
 	public void test09(){
 		
-		newAccountPage.typeEmail("user02@greco.es")
-			.typeNickname("user02")
-			.typeMyData("Prueba user02.")
+		newAccountPage.typeEmail(TestConfiguration.USER02_EMAIL)
+			.typeNickname(TestConfiguration.USER02_NICKNAME)
+			.typeMyData(TestConfiguration.USER02_MYDATA)
 			.typePassword("")
 			.typePasswordConfirmation("");
 		
