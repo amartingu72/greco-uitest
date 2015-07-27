@@ -38,6 +38,7 @@ public class LoginAdmPage{
     By passwordLocator = By.id(formId + ":passwd");
     By loginButtonLocator = By.id(formId + ":loginBtn");
     By newAccountButtonLocator = By.id(formId + ":newAccountBtn");
+    By pwdForgottenButtonLocator = By.id(formId + ":pwdForgottenBtn");
 
 	public LoginAdmPage typeUsername(String username) {
         // This is the only place that "knows" how to enter a username
@@ -101,6 +102,15 @@ public class LoginAdmPage{
     public NewaccountPage newAccount(){
     	 driver.findElement(newAccountButtonLocator).click();
     	 return new NewaccountPage(driver);
+    }
+    
+    /**
+     * Recuperar contraseña olvidada.
+     * @return Página de contraseña olvidada.
+     */
+    public PwdforgottenPage pwdForgotten(){
+    	 driver.findElement(pwdForgottenButtonLocator).click();
+    	 return new PwdforgottenPage(driver);
     }
 	
 

@@ -235,4 +235,18 @@ public class NewAccountTest {
 		
 		newAccountPage.nextKO();
 	}
+	/**
+	 * Creación de una cuenta para utilización en otros tests.
+	 */
+	@Test
+	public void test10(){
+	
+		newAccountPage.typeEmail(TestConfiguration.USER03_EMAIL)
+		.typeNickname(TestConfiguration.USER03_NICKNAME)
+		.typeMyData(TestConfiguration.USER03_MYDATA)
+		.typePassword(TestConfiguration.USER03_PWD)
+		.typePasswordConfirmation(TestConfiguration.USER03_PWD);
+
+		newAccountPage.nextOK();
+	}
 }

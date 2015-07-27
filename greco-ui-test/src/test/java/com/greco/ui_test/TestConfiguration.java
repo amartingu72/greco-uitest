@@ -23,7 +23,7 @@ public class TestConfiguration {
 	public final static String USER01_PWD="user";
 	
 	
-	//USER02 Usuario que no existe.
+	//USER02 Usuario que no existe
 	public final static String USER02_EMAIL="user02@greco.es";
 	public final static String USER02_NICKNAME="user02";
 	public final static String USER02_MYDATA="Comentarios sobre user 02";
@@ -31,10 +31,10 @@ public class TestConfiguration {
 	
 	
 	//USER03 Usuario para probar el cambio de contraseña. Requiere email válido.
-	public final static String USER03_EMAIL="user03@greco.es";
-	public final static String USER03_NICKNAME="user03";
+	public final static String USER03_EMAIL="amartingu72@gmail.com";
+	public final static String USER03_NICKNAME="amartingu72";
 	public final static String USER03_MYDATA="Comentarios sobre user 03";
-	public final static String USER03_PWD="user";
+	public final static String USER03_PWD="a";
 	
 	
 	
