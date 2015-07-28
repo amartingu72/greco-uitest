@@ -22,6 +22,10 @@ public class SelectcomPage {
         
         
     }
+	
+	By newCommunityBtnLocator=By.id("selectCommunityForm:newComBtn");
+	
+	
 	/**
 	 * Indica si el usuario que accedió a esta página tiene una o más comunidades disponibles.
 	 * @return Si (true), no (false)
@@ -34,5 +38,10 @@ public class SelectcomPage {
         	ret=false;	
         }
 		return ret;
+	}
+	
+	public NewcommunityPage newCommunity(){
+		driver.findElement(newCommunityBtnLocator).click();
+		return new NewcommunityPage(driver);
 	}
 }

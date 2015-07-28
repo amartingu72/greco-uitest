@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import com.greco.ui_test.admin.po.LoginAdmPage;
-import com.greco.ui_test.admin.po.NewaccountPage;
 import com.greco.ui_test.admin.po.PwdforgottenPage;
 
 public class PwdForgottenTest {

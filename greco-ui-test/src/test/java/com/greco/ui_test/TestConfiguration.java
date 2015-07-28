@@ -36,7 +36,11 @@ public class TestConfiguration {
 	public final static String USER03_MYDATA="Comentarios sobre user 03";
 	public final static String USER03_PWD="a";
 	
-	
+	//COM01
+	public final static String COM01_NAME="Comunidad de prueba 01";
+	public final static String COM01_ZIPCODE="99999";
+	public final static String COM01_COUNTRY="FRANCE";
+	public final static String COM01_NOTES=" Notas de comunidad.";
 	
 	
 	   protected TestConfiguration() {
